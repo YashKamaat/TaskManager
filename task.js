@@ -54,6 +54,8 @@
 //OR
 // TASK MANAGER
 
+// TASK MANAGER
+
 // Using a Template Literal because it recognizes line breaks
 const menu = `TASK MANAGER
 
@@ -142,6 +144,10 @@ while (userInput !== `CLOSE`){
 
     // Loop that continues looping until the user enters a valid number
     // Verifies the user entered a whole (AKA Not a decimal) that is one of the options in the prompt (AKA Within the number range from 1 to length of the tasks array)
+    // The first condition (Math.floor(num) !== num) checks to see if the user entered a decimal
+    // The second condition (num < 0) checks to see if the user entered 0 or a negative number
+    // The third condition (num >= tasks.length) checks to see if the user entered a number that is higher than those that were displayed to the user
+    // The fourth condition (!num) checks to see if the user entered something that cannot be converted into a number which causes the value of the NUM variable to be NaN (Not A Number) which has a default boolean value of false
     while (Math.floor(num) !== num || num < 0 || num >= tasks.length || !num){
 
       // Alerts the user that they have NOT entered a valid number
